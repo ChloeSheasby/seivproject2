@@ -43,6 +43,18 @@ exports.findAll = (req, res) => {
     });
   };
 
+// Retrieve all Courses from the database.
+exports.findSome = (req, res) => {
+  Course.getSome(req.query.start, req.query.length, (err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving courses."
+      });
+    else res.send(data);
+  });
+};
+
 // Find a single Course with a courseID
 exports.findOne = (req, res) => {
     Course.findById(req.params.courseID, (err, data) => {

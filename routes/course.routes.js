@@ -5,7 +5,10 @@ module.exports = app => {
     app.post("/courses", courses.create);
   
     // Retrieve all Courses
-    app.get("/courses", courses.findAll);
+    app.get("/courses", courses.findSome);
+
+    // Retrieve some Courses
+    //app.get("/courses?", courses.findSome);
   
     // Retrieve a single Course with courseID
     app.get("/courses/:courseID", courses.findOne);
