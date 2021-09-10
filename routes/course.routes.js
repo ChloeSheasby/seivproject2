@@ -2,20 +2,20 @@ module.exports = app => {
     const courses = require("../controllers/course.controller.js");
   
     // Create a new Course
-    app.post("/courses", courses.create);
+    app.post("/api/courses", courses.create);
   
     // Retrieve all Courses
-    app.get("/courses", courses.findAll);
+    app.get("/api/courses", courses.findAll);
   
     // Retrieve a single Course with courseID
-    app.get("/courses/:courseID", courses.findOne);
+    app.get("/api/courses/:courseID", courses.findOne);
   
     // Update a Course with courseID
-    app.put("/courses/:courseID", courses.update);
+    app.put("/api/courses/:courseID", courses.update);
   
     // Delete a Course with courseID
-    app.delete("/courses/:courseID", courses.delete);
+    app.delete("/api/courses/:courseID", courses.delete);
   
     // Create a new Course
-    app.delete("/courses", courses.deleteAll);
+    app.delete("/api/courses", courses.deleteAll);
   };

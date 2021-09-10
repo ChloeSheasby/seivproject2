@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: 't2-database-1.cwre8cvv6tyn.us-west-1.rds.amazonaws.com',
+    HOST: 't1-database-1.cwre8cvv6tyn.us-west-1.rds.amazonaws.com',
     port: 3306,
     USER: 'admin',
     PASSWORD: 'seiv-t1-2021',
