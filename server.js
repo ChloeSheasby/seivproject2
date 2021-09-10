@@ -19,5 +19,5 @@ require("./routes/course.routes.js")(app);
 
 // set port, listen for requests
 app.listen(db.port, () => {
-  console.log("Server is running on port 3000.");
+  console.log(`Server is running on port ${db.port}.`);
 });
