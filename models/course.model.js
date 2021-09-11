@@ -55,6 +55,33 @@ Course.getAll = result => {
   });
 };
 
+Course.getSome = (start, length, result) => {
+  if(start == null) {
+    sql.query("SELECT * FROM courses", (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+  
+      console.log("courses: ", res);
+      result(null, res);
+    });
+  }
+  else {
+    sql.query(`SELECT * FROM courses LIMIT ${length} OFFSET ${(start-1)}`, (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      console.log("courses: ", res);
+      result(null, res);
+    });
+  }
+};
+
 Course.updateById = (courseID, course, result) => {
   sql.query(
     "UPDATE courses SET dept = ?, courseNum = ?, level = ?, hours = ?, name = ?, description = ? WHERE courseID = ?",
