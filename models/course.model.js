@@ -42,19 +42,6 @@ Course.findById = (courseID, result) => {
   });
 };
 
-Course.getAll = result => {
-  sql.query("SELECT * FROM courses", (err, res) => {
-    if (err) {
-      console.log("error: ", err);
-      result(null, err);
-      return;
-    }
-
-    console.log("courses: ", res);
-    result(null, res);
-  });
-};
-
 Course.getSome = (start, length, result) => {
   if(start == null) {
     sql.query("SELECT * FROM courses", (err, res) => {
